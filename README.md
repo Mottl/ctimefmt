@@ -1,5 +1,6 @@
 # ctimefmt
-ctime-like syntax support for Go
+strptime/strftime compatible syntax (e.g. "%Y-%m-%d %H:%M:%S %Z") for Go.
+
 
 ## Installation
 ```sh

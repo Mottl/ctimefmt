@@ -2,8 +2,8 @@
 // Use of this source code is governed by MIT license
 // that can be found in the LICENSE file.
 
-// Package ctimefmt provides functionality for formating and parsing time.Time
-// struct using legacy ctime-like syntax such as: "%Y-%m-%d %H:%M:%S %Z"
+// strptime/strftime compatible syntax support,
+// e.g. "%Y-%m-%d %H:%M:%S %Z".
 package ctimefmt
 
 import (
