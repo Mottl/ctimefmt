@@ -12,42 +12,40 @@ import (
 )
 
 var ctimeRegexp, decimalsRegexp *regexp.Regexp
-var ctimeSubstitutes map[string]string
+
+// ctime format -> Go format conversion
+var ctimeSubstitutes map[string]string = map[string]string{
+	"%Y": "2006",
+	"%y": "06",
+	"%m": "01",
+	"%b": "Jan",
+	"%h": "Jan",
+	"%B": "January",
+	"%d": "02",
+	"%e": "_2",
+	"%a": "Mon",
+	"%A": "Monday",
+	"%H": "15",
+	"%I": "03",
+	"%p": "PM",
+	"%M": "04",
+	"%S": "05",
+	"%f": "999999",
+	"%z": "-0700",
+	"%Z": "MST",
+	"%D": "01/02/2006",
+	"%x": "01/02/2006",
+	"%F": "2006-01-02",
+	"%T": "15:04:05",
+	"%X": "15:04:05",
+	"%r": "03:04:05 pm",
+	"%R": "15:04",
+	"%n": "\n",
+	"%t": "\t",
+	"%%": "%",
+	"%c": "Mon Jan 02 15:04:05 2006"}
 
 func init() {
-	// ctime format -> Go format conversion
-	ctimeSubstitutes = make(map[string]string)
-	ctimeSubstitutes["%Y"] = "2006"
-	ctimeSubstitutes["%y"] = "06"
-	ctimeSubstitutes["%m"] = "01"
-	ctimeSubstitutes["%b"] = "Jan"
-	ctimeSubstitutes["%h"] = "Jan"
-	ctimeSubstitutes["%B"] = "January"
-	ctimeSubstitutes["%d"] = "02"
-	ctimeSubstitutes["%e"] = "_2"
-	ctimeSubstitutes["%a"] = "Mon"
-	ctimeSubstitutes["%A"] = "Monday"
-	ctimeSubstitutes["%H"] = "15"
-	ctimeSubstitutes["%I"] = "03"
-	ctimeSubstitutes["%p"] = "PM"
-	ctimeSubstitutes["%M"] = "04"
-	ctimeSubstitutes["%S"] = "05"
-	ctimeSubstitutes["%f"] = "999999"
-	ctimeSubstitutes["%z"] = "-0700"
-	ctimeSubstitutes["%Z"] = "MST"
-
-	ctimeSubstitutes["%D"] = "01/02/2006"
-	ctimeSubstitutes["%x"] = "01/02/2006"
-	ctimeSubstitutes["%F"] = "2006-01-02"
-	ctimeSubstitutes["%T"] = "15:04:05"
-	ctimeSubstitutes["%X"] = "15:04:05"
-	ctimeSubstitutes["%r"] = "03:04:05 pm"
-	ctimeSubstitutes["%R"] = "15:04"
-	ctimeSubstitutes["%n"] = "\n"
-	ctimeSubstitutes["%t"] = "\t"
-	ctimeSubstitutes["%%"] = "%"
-	ctimeSubstitutes["%c"] = "Mon Jan 02 15:04:05 2006"
-
 	ctimeRegexp = regexp.MustCompile(`%.`)
 	decimalsRegexp = regexp.MustCompile(`\d`)
 }
