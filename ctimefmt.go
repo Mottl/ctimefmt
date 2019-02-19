@@ -92,7 +92,7 @@ func Parse(format, value string) (time.Time, error) {
 	return time.Parse(ToNative(format), value)
 }
 
-// ToNative converts ctime's format string to Go native layout
+// ToNative converts ctime-like format string to Go native layout
 // (which is used by time.Time.Format() and time.Parse() functions).
 func ToNative(format string) string {
 	if match := decimalsRegexp.FindString(format); match != "" {

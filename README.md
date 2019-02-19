@@ -24,7 +24,7 @@ func main() {
     // Format() function formats Time struct:
     fmt.Println(ctimefmt.Format("%Y-%m-%d %H:%M:%S.%f %Z", now))
 
-    // ToNative() convert ctime-like syntax to Go native layout:
+    // ToNative() converts ctime-like format string to Go native layout:
     s := ctimefmt.ToNative("%Y-%m-%d %H:%M:%S.%f %Z")
     fmt.Println(now.Format(s)))
 
