@@ -1,5 +1,7 @@
 # ctimefmt
-strptime/strftime compatible syntax (e.g. "%Y-%m-%d %H:%M:%S %Z") for Go.
+[![GoDoc](https://godoc.org/github.com/Mottl/ctimefmt?status.svg)](https://godoc.org/github.com/Mottl/ctimefmt)
+
+strptime/strftime compatible syntax (e.g. `"%Y-%m-%d %H:%M:%S %Z"`) for Go.
 
 
 ## Installation
