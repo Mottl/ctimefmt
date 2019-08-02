@@ -26,6 +26,7 @@ var ctimeSubstitutes map[string]string = map[string]string{
 	"%a": "Mon",
 	"%A": "Monday",
 	"%H": "15",
+	"%l": "3",
 	"%I": "03",
 	"%p": "PM",
 	"%M": "04",
