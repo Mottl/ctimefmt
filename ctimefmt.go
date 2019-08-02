@@ -30,6 +30,7 @@ var ctimeSubstitutes map[string]string = map[string]string{
 	"%p": "PM",
 	"%M": "04",
 	"%S": "05",
+	"%L": "000",
 	"%f": "999999",
 	"%z": "-0700",
 	"%Z": "MST",
