@@ -1,3 +1,3 @@
-module github.com/ErmakovDmitriy/ctimefmt
+module github.com/Mottl/ctimefmt
 
 go 1.12
