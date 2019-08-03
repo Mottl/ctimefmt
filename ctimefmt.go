@@ -66,10 +66,13 @@ func init() {
 //   %A - Full weekday name (Sunday, Monday, ...)
 //   %H - Hour (24-hour clock) as a zero-padded decimal number (00, ..., 24)
 //   %I - Hour (12-hour clock) as a zero-padded decimal number (00, ..., 12)
+//   %l - Hour (12-hour clock: 0, ..., 12)
 //   %p - Locale’s equivalent of either AM or PM
+//   %P - Locale’s equivalent of either am or pm
 //   %M - Minute, zero-padded (00, 01, ..., 59)
 //   %S - Second as a zero-padded decimal number (00, 01, ..., 59)
-//   %f - Microsecond as a decimal number, zero-padded on the left (00, 01, ..., 59)
+//   %L - Millisecond as a decimal number, zero-padded on the left (000, 001, ..., 999)
+//   %f - Microsecond as a decimal number, zero-padded on the left (000000, ..., 999999)
 //   %z - UTC offset in the form ±HHMM[SS[.ffffff]] or empty(+0000, -0400)
 //   %Z - Timezone name or abbreviation or empty (UTC, EST, CST)
 //   %D, %x - Short MM/DD/YY date, equivalent to %m/%d/%y
