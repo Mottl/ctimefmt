@@ -3,23 +3,37 @@ package ctimefmt
 import "time"
 import "testing"
 
-var format string = "%Y-%m-%d %H:%M:%S.%f"
-var value string = "2019-01-02 03:04:05.666666"
+var format1 string = "%Y-%m-%d %H:%M:%S.%f"
+var format2 string = "%Y-%m-%d %l:%M:%S.%L %P, %a"
+var value1 string = "2019-01-02 15:04:05.666666"
+var value2 string = "2019-01-02 3:04:05.666 pm, Wed"
+var dt1 time.Time = time.Date(2019, 1, 2, 15, 4, 5, 666666000, time.UTC)
+var dt2 time.Time = time.Date(2019, 1, 2, 15, 4, 5, 666000000, time.UTC)
 
 func TestFormat(t *testing.T) {
-	dt := time.Date(2019, 1, 2, 3, 4, 5, 666666000, time.UTC)
-	s := Format(format, dt)
-	if s != value {
-		t.Errorf("Given: %v, expected: %v", s, value)
+	s := Format(format1, dt1)
+	if s != value1 {
+		t.Errorf("Given: %v, expected: %v", s, value1)
+	}
+
+	s = Format(format2, dt1)
+	if s != value2 {
+		t.Errorf("Given: %v, expected: %v", s, value2)
 	}
 }
 
 func TestParse(t *testing.T) {
-	dt := time.Date(2019, 1, 2, 3, 4, 5, 666666000, time.UTC)
-	dt_, err := Parse(format, value)
+	dt_, err := Parse(format1, value1)
 	if err != nil {
 		t.Error(err)
-	} else if dt != dt {
-		t.Errorf("Given: %v, expected: %v", dt_, dt)
+	} else if dt_ != dt1 {
+		t.Errorf("Given: %v, expected: %v", dt_, dt1)
+	}
+
+	dt_, err = Parse(format2, value2)
+	if err != nil {
+		t.Error(err)
+	} else if dt_ != dt2 {
+		t.Errorf("Given: %v, expected: %v", dt_, dt2)
 	}
 }
