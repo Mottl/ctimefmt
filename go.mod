@@ -1,3 +1,3 @@
-module github.com/Mottl/ctimefmt
+module github.com/bluemedora/ctimefmt
 
 go 1.12
