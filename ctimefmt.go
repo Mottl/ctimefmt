@@ -18,11 +18,14 @@ var ctimeSubstitutes map[string]string = map[string]string{
 	"%Y": "2006",
 	"%y": "06",
 	"%m": "01",
+	"%o": "_1",
+	"%q": "1",
 	"%b": "Jan",
 	"%h": "Jan",
 	"%B": "January",
 	"%d": "02",
 	"%e": "_2",
+	"%g": "2",
 	"%a": "Mon",
 	"%A": "Monday",
 	"%H": "15",
@@ -34,8 +37,12 @@ var ctimeSubstitutes map[string]string = map[string]string{
 	"%S": "05",
 	"%L": "000",
 	"%f": "999999",
-	"%z": "-0700",
 	"%Z": "MST",
+	"%z": "-0700",
+	"%w": "-070000",
+	"%i": "-07",
+	"%j": "-07:00",
+	"%k": "-07:00:00",
 	"%D": "01/02/2006",
 	"%x": "01/02/2006",
 	"%F": "2006-01-02",
@@ -58,10 +65,13 @@ func init() {
 //   %Y - Year, zero-padded (0001, 0002, ..., 2019, 2020, ..., 9999)
 //   %y - Year, last two digits, zero-padded (01, ..., 99)
 //   %m - Month as a decimal number (01, 02, ..., 12)
+//   %o - Month as a space-padded number ( 1, 2, ..., 12)
+//   %q - Month as a unpadded number (1,2,...,12)
 //   %b, %h - Abbreviated month name (Jan, Feb, ...)
 //   %B - Full month name (January, February, ...)
 //   %d - Day of the month, zero-padded (01, 02, ..., 31)
 //   %e - Day of the month, space-padded ( 1, 2, ..., 31)
+//   %g - Day of the month, unpadded (1,2,...,31)
 //   %a - Abbreviated weekday name (Sun, Mon, ...)
 //   %A - Full weekday name (Sunday, Monday, ...)
 //   %H - Hour (24-hour clock) as a zero-padded decimal number (00, ..., 24)
